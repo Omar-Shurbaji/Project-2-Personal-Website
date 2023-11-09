@@ -1,0 +1,490 @@
+/* Start variable  */
+:root {
+    --main-color: rgb(0 239 239);
+    --secondary-color: #0075ff;
+}
+/* End variable  */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Oswald', sans-serif;
+    font-family: system-ui;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    list-style: none;
+}
+.container {
+    width: 80%;
+    margin: 0 auto;
+    min-height: 30px;
+}
+.main-header h2 {
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    text-align: center;
+    font-family: sans-serif;
+    cursor: context-menu;
+}
+/* Start header  */
+.header {
+    background-color: #f7f7f7;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.header .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .logo {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--main-color);
+    padding: 10px 20px;
+    font-size: 25px;
+    cursor: context-menu;
+}
+.header .container i {
+    display: none;
+}
+
+.header .container ul {
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+}
+.header .container ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(41, 41, 255, 0.849);
+    transition: 0.3s;
+}
+.header .container ul li a:hover {
+    background: linear-gradient(to bottom , blue 25% ,rgb(140, 0, 255) , rgb(234, 0, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@media (max-width: 768px) {
+    .header .container .logo {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+    .header .container ul {
+        transform: rotateX(90deg);
+        transform-origin: top left;
+        transition: 0.5s;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        width: 80%;
+        height: 160px;
+    }
+    .header .container i {
+        display: block;
+        font-size: 19px;
+        position: absolute;
+        right: 10%;
+    }
+    .header .container ul li:not(:last-child) {
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent transparent #88888883 transparent;
+    }
+    .header .container i:hover + ul {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 10%;
+        width: 80%;
+        background-color: rgb(115 115 115 / 62%);
+        transform-origin: top left;
+        transform: rotateX(0deg);
+    }
+    .header .container ul li {
+        padding: 10px;
+    }
+    .header .container ul li a {
+        font-size: 13px;
+        margin-left: 5px;
+        margin-right: 2px;
+        color: #e2e2e2;
+    }
+    .header .container ul li a:hover {
+        background: linear-gradient(to bottom , rgb(187, 187, 255) 25% ,rgb(223, 183, 255) , rgb(248, 175, 255));
+        -webkit-background-clip: text;
+        background-clip:text;
+        -webkit-text-fill-color: transparent;
+        padding-left: 10px;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .header .container ul {
+        width: 50%;
+    }
+} 
+/* End header  */
+
+
+/* Start home  */
+.home {
+    background-image: url("../images/background-image.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 93vh;
+}
+.home::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgb(0 0 0 / 30%);
+}
+.home .container {
+    position: absolute;
+    top: 30%;
+    color: white;
+    left: 10%;
+}
+.home .text {
+    cursor: context-menu;
+}
+.home .text p {
+    font-size: 30px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+.home .text h2 {
+    font-family: system-ui;
+    font-size: 60px;
+    letter-spacing: 3px;
+    color: rgb(0 217 255);
+    padding-bottom: 20px;
+}
+.home .text span {
+    font-size: 38px;
+    font-weight: 500;
+}
+.home .container button {
+    background-color: #0075ff;
+    margin: 30px 0;
+    font-size: 17px;
+    padding: 20px 45px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.home .container button:hover {
+    transform: scale(1.1);
+    background-color: rgb(41, 41, 255);
+}
+.home .container .icon i {
+    font-size: 23px;
+    margin: 0 -23px 0 32px;
+    color: #999;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.home .container .icon i:hover:nth-child(1) {
+    color: blue;
+    transform: scale(1.2);
+}
+.home .container .icon i:hover:nth-child(2) {
+    color: rgb(0, 162, 255);
+    transform: scale(1.2);
+}
+.home .container .icon i:hover:nth-child(3) {
+    color: #0075ff;
+    transform: scale(1.2);
+}
+.home .container .icon i:hover:nth-child(4) {
+    color: red;
+    transform: scale(1.2);
+}
+@media (max-width: 768px) {
+    .home .text p {
+        font-size: 20px;
+    }
+    .home .text h2 {
+        font-size: 30px;
+    }
+    .home .text span {
+        font-size: 25px;
+    }
+    .home .container button {
+        font-size: 13px;
+    }
+    .home .container .icon {
+        font-size: 0px;
+    }
+    .home .container .icon i {
+        font-size: 20px;
+    }
+}
+/* End home */
+
+
+/* Start services  */
+.services {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.services .container .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 100px 0;
+}
+.services .container .content .box {
+    width: 30%;
+    text-align: center;
+    padding: 30px 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 24px 0px #c9c9c9;
+    transition: 0.8s;
+    margin: 0 0 80px;
+    cursor: context-menu;
+}
+.services .container .content .box i {
+    font-size: 120PX;
+    margin: 20PX 0 40PX;
+    color: #0075ff;
+}
+.services .container .content .box h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+.services .container .content .box p {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.5;
+}
+.services .container .content .box:hover {
+    transform: scale(1.1);
+}
+@media (max-width: 768px) {
+    .services .container .content {
+        justify-content: center;
+    }
+    .services .container .content .box {
+        width: 85%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+    .services .container .content {
+        justify-content: center;
+    }
+    .services .container .content .box {
+        width: 40%;
+        margin: 0 23px 45px;
+    }
+}
+/* End services  */
+
+
+/* Start project  */
+.project {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: rgb(2 0 16);
+}
+.project .main-header {
+    margin: 40px 0 0;
+}
+.project .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 70px 0;
+}
+.project .content .box {
+    margin: 20px;
+    background-color: #eeeeee;
+    border: 3px solid #eeeeee;
+    border-radius: 5px;
+    transition: 0.8s;
+    cursor: context-menu;
+}
+.project .content .box img {
+    width: 400px;
+    height: 270px;
+}
+.project .content .box img:hover {
+    filter: contrast(0.8);
+}
+.project .content .box:hover {
+    transform: scale(1.12);
+}
+.project .content .box p {
+    padding: 15px 15px 0;
+    color: #333;
+}
+.project .content .box h2 {
+    text-transform: uppercase;
+    padding: 8px 15px;
+    width: 40%;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 900;
+}
+.project .content .box h3 {
+    display: inline-block;
+    padding: 0 0 0 102px;
+    color: blue;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .project .content .box img {
+        width: 100%;
+        height: 190px;
+    }
+    .project .content .box h2 {
+        width: 115px;
+        font-size: 14px;
+    }
+    .project .content .box h3 {
+        padding-left: 20px;
+        font-size: 14px;
+    }
+    .project .content .box p {
+        font-size: 13px;
+    }
+}   
+/* End project  */
+
+
+/* Start contact  */
+.contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.contact .text {
+    font-size: 50px;
+    text-align: center;
+    margin: 90px auto 0;
+    color: var(--main-color);
+    font-weight: 800;
+}
+.contact .content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    margin: 4% 20% 11%;
+    text-align: center;
+}
+.contact .content .box {
+    box-shadow: 0px 0px 30px -11px #999;
+    transition: 0.8s;
+    border-radius: 6px;
+    margin: 15px;
+    cursor: context-menu;
+} 
+.contact .content .box:hover {
+    transform: scale(1.12);
+}
+.contact .content .box i {
+    font-size: 80px;
+    color: var(--secondary-color);
+    margin: 30px 40px 50px;
+}
+.contact .content .box p {
+    color: #444;
+    margin: 10px 0 30px;
+    font-size: 25px;
+    font-weight: 600;
+}
+@media (max-width: 768px) {
+    .contact .text {
+        font-size: 30px;
+    }
+    .contact .content {
+        margin: 30px 45px;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    }
+    .contact .content .box p {
+        font-size: 18px;
+    }
+}
+/* End contact  */
+
+
+/* Start footer  */
+.footer {
+    width: 100%;
+    height: 90px;
+    background-color: rgb(2 0 16);
+}
+.footer .content {
+    justify-content: space-between;
+    display: flex;
+    margin: 10px 35px;
+    padding: 30px 0;
+    cursor: context-menu;
+}
+.footer .content p {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+.footer .content span {
+    color: var(--secondary-color);
+}
+.footer .content i {
+    color: #999;
+    font-size: 22px;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.footer .content .icons i:hover:nth-child(1) {
+    color: blue;
+    transform: scale(1.25);
+}
+.footer .content .icons i:hover:nth-child(2) {
+    color: rgb(0, 162, 255);
+    transform: scale(1.25);
+}
+.footer .content .icons i:hover:nth-child(3) {
+    color: #0075ff;
+    transform: scale(1.25);
+}
+.footer .content .icons i:hover:nth-child(4) {
+    color: red;
+    transform: scale(1.25);
+}
+@media (max-width: 768px) {
+    .footer .content {
+        margin: 5px 15px;
+    }
+    .footer .content p {
+        font-size: 15px;
+    }
+    .footer .content i {
+        font-size: 15px;
+        margin: 0 0 0 4px;
+    }
+}
+/* End footer */
